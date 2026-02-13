@@ -1,0 +1,133 @@
+:root {
+    --primary-color: #ffb3c6;
+    /* Pastel Pink */
+    --secondary-color: #ff8fab;
+    --text-color: #590d22;
+    --bg-color: #ffe8f2;
+    --btn-yes: #2ecc71;
+    /* Green for go/yes */
+    --btn-no: #ff5d8f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--bg-color);
+    font-family: 'Poppins', sans-serif;
+    /* Keep clear font */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    /* Ensure full height for centering */
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 3rem;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    transform-style: preserve-3d;
+    transition: transform 0.1s ease;
+}
+
+.gif-container img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    /* Shadow on image if desired, or let card handle it */
+}
+
+.title {
+    font-size: 2.2rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #8c2f3d;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#yesBtn {
+    background-color: var(--btn-yes);
+}
+
+#noBtn {
+    background-color: var(--btn-no);
+    position: relative;
+}
+
+/* Floating element styles */
+.floating-hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Success Message */
+.hidden {
+    display: none !important;
+}
+
+#successMessage {
+    text-align: center;
+    /* Inherits card styles if we wrap it in .card, see html */
+}
+
+#successMessage h1 {
+    font-size: 2.5rem;
+    color: #ff4d6d;
+    margin-bottom: 20px;
+}
